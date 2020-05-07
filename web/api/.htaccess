@@ -1,0 +1,24 @@
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# otherwise forward it to index.php
+RewriteRule . index.php
+#Header add Access-Control-Allow-Origin: *
+
+Header always set Access-Control-Allow-Origin "*"
+
+# header中需要传参，请参考下面注释行，后面的ProjectId根据实际项目需求，进行修改调整
+#Header always set Access-Control-Allow-Headers: "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding, ProjectId"
+Header always set Access-Control-Allow-Headers: "X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding"
+
+Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS"
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+
+#增加下面的内容
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

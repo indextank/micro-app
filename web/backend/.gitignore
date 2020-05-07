@@ -1,0 +1,9 @@
+# windows thumbnail cache
+Thumbs.db
+
+/runtime
+
+/assets
+
+# Mac DS_Store Files
+.DS_Store
