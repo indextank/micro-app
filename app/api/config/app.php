@@ -1,5 +1,7 @@
 <?php
 
+$database = require __DIR__ . '/../../../config/database.php';
+
 return [
     'id' => 'api',
     'bootstrap' => ['log'],
@@ -62,7 +64,9 @@ return [
         ],
 
         /** ------ 数据库 ------ **/
-        'db' => require __DIR__ . '/../../../config/database.php',
+        //'db' => require __DIR__ . '/../../../config/database.php',
+        'db' => $database['db'],
+        //'db2' => $database['db2'],
 
         /** ------ redis ------ **/
         'redis' => require __DIR__ . '/redis.php',

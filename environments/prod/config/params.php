@@ -2,10 +2,10 @@
 return [
     'adminEmail' => 'admin@example.com',
     'supportEmail' => 'support@example.com',
-    'user.passwordResetTokenExpire' => 3600,
+    'user.passwordResetTokenExpire' => 3600 * 12,
 
     // 开发模式 - 开启后某些菜单功能可见，修改后请刷新页面
-    'sys_dev' => "dev",
+    'sys_dev' => "pron",
 
     // 请求全局唯一ID
     'uuid' => '',

@@ -2,7 +2,7 @@
 return [
     'adminEmail' => 'admin@example.com',
     'supportEmail' => 'support@example.com',
-    'user.passwordResetTokenExpire' => 3600,
+    'user.passwordResetTokenExpire' => 3600 * 24 * 7,
 
     // 开发模式 - 开启后某些菜单功能可见，修改后请刷新页面
     'sys_dev' => "dev",
